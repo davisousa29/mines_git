@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+    <!--plugin moeda input-->
+    <title>Mines</title>
+
+    <script>
+      $(function(){
+        $(document).ready(function(){
+          Mines.init();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="page_wrapper">
+      <div id="app">
+        <div class="game_wrapper">
+          <div class="game_header">
+            <div class="game_header_logo"></div>
+            <div class="game_header_right">
+              <div><h5>SALDO</h5></div>
+            </div>
+            <div class="game_header_right_saldo">
+              <input class="input_clean_saldo" value="1000">
+            </div>
+          </div>
+          <div class="game_container">
+            <div class="game_bet">
+              <div class="game_bet_inner">
+                <div class="game_bet_inner_container">
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x1.00</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x1.10</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x1.20</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x1.30</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x1.40</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x1.50</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x1.60</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x1.70</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x1.80</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x1.90</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x2.00</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x2.10</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x2.20</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x2.30</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x2.40</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x2.50</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x2.60</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x2.70</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x2.80</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x2.90</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x3.00</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x3.10</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x3.20</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x3.30</div>
+                  </div>
+                  <div class="game_bet_item dinamic" style="min-width: 78px">
+                    <div class="game_bet_item_text">x3.40</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="game_mode">
+              <div class="game_mode_btn">
+                <button
+                  class="game_mode_btn_select"
+                  id="normal"
+                  onclick="Mines.gameModeNormalBtnColor()"
+                >
+                  <div class="game_mode_btn_inner_text">Normal</div>
+                </button>
+              </div>
+              <div class="game_mode_btn">
+                <button
+                  class="game_mode_btn_inner"
+                  id="auto"
+                  onclick="Mines.gameModeAutoBtnColor()"
+                >
+                  <div class="game_mode_btn_inner_text">Auto</div>
+                </button>
+              </div>
+            </div>
+            <div class="board_wrapper">
+              <div class="betting_table">
+                <div class="betting_table_squares">
+                  <div class="betting_square classeNova" id="telha_1" onclick="Mines.verifyBombs('1')"></div>
+                  <div class="betting_square classeNova" id="telha_2" onclick="Mines.verifyBombs('2')"></div>
+                  <div class="betting_square classeNova" id="telha_3" onclick="Mines.verifyBombs('3')"></div>
+                  <div class="betting_square classeNova" id="telha_4" onclick="Mines.verifyBombs('4')"></div>
+                  <div class="betting_square classeNova" id="telha_5" onclick="Mines.verifyBombs('5')"></div>
+                  <div class="betting_square classeNova" id="telha_6" onclick="Mines.verifyBombs('6')"></div>
+                  <div class="betting_square classeNova" id="telha_7" onclick="Mines.verifyBombs('7')"></div>
+                  <div class="betting_square classeNova" id="telha_8" onclick="Mines.verifyBombs('8')"></div>
+                  <div class="betting_square classeNova" id="telha_9" onclick="Mines.verifyBombs('9')"></div>
+                  <div class="betting_square classeNova" id="telha_10" onclick="Mines.verifyBombs('10')"></div>
+                  <div class="betting_square classeNova" id="telha_11" onclick="Mines.verifyBombs('11')"></div>
+                  <div class="betting_square classeNova" id="telha_12" onclick="Mines.verifyBombs('12')"></div>
+                  <div class="betting_square classeNova" id="telha_13" onclick="Mines.verifyBombs('13')"></div>
+                  <div class="betting_square classeNova" id="telha_14" onclick="Mines.verifyBombs('14')"></div>
+                  <div class="betting_square classeNova" id="telha_15" onclick="Mines.verifyBombs('15')"></div>
+                  <div class="betting_square classeNova" id="telha_16" onclick="Mines.verifyBombs('16')"></div>
+                  <div class="betting_square classeNova" id="telha_17" onclick="Mines.verifyBombs('17')"></div>
+                  <div class="betting_square classeNova" id="telha_18" onclick="Mines.verifyBombs('18')"></div>
+                  <div class="betting_square classeNova" id="telha_19" onclick="Mines.verifyBombs('19')"></div>
+                  <div class="betting_square classeNova" id="telha_20" onclick="Mines.verifyBombs('20')"></div>
+                  <div class="betting_square classeNova" id="telha_21" onclick="Mines.verifyBombs('21')"></div>
+                  <div class="betting_square classeNova" id="telha_22" onclick="Mines.verifyBombs('22')"></div>
+                  <div class="betting_square classeNova" id="telha_23" onclick="Mines.verifyBombs('23')"></div>
+                  <div class="betting_square classeNova" id="telha_24" onclick="Mines.verifyBombs('24')"></div>
+                  <div class="betting_square classeNova" id="telha_25" onclick="Mines.verifyBombs('25')"></div>
+                </div>
+              </div>
+            </div>
+            <div class="game_bet_config">
+              <div class="game_bet_config_inner">
+                <div class="game_bet_config_btn">
+                  <button class="game_bet_config_btn_inner" onclick="Mines.minValue()">
+                    <div class="game_bet_config_btn_inner_text">min</div>
+                  </button>
+                </div>
+                <div class="game_bet_config_btn">
+                  <button class="game_bet_config_btn_inner" onclick="Mines.subValueInput()">
+                    <div class="game_bet_config_btn_inner_text">-</div>
+                  </button>
+                </div>
+                <div class="game_bet_config_btn">
+                  <button class="game_bet_config_btn_inner" onclick="Mines.somValueInput()">
+                    <div class="game_bet_config_btn_inner_text">+</div>
+                  </button>
+                </div>
+                <div class="game_bet_config_btn">
+                  <button class="game_bet_config_btn_inner" onclick="Mines.maxValue()">
+                    <div class="game_bet_config_btn_inner_text">max</div>
+                  </button>
+                </div>
+                <div class="game_input_wrapper">
+                  <label>Valor da Aposta:</label>
+                  <div>
+                    <label style="top: 25px; font-weight: 700; font-size: 18px">R$ </label>
+                    <input
+                      onfocus="Mines.mascaraMoeda()"
+                      type="text"
+                      name="game_input_number_bet_value"
+                      class="game_input_number"
+                      id="game_input_number_bet_value"
+                      type="text"
+                      minlength="2"
+                      maxlength="6"
+                      value="1"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="settings_mines_input_wrapper">
+                <div class="settings_mines_input_wrapper_inner">
+                  <div class="game_config_btn">
+                    <div class="game_config_btn_inner" onclick="Mines.threeMines(); Mines.gemasRestantes(); Mines.addMultiple();">
+                      <div class="game_config_btn_inner_text">3</div>
+                    </div>
+                  </div>
+                  <div class="game_config_btn" onclick="Mines.fiveMines(); Mines.gemasRestantes(); Mines.addMultiple();">
+                    <div class="game_config_btn_inner">
+                      <div class="game_config_btn_inner_text">5</div>
+                    </div>
+                  </div>
+                  <div class="game_config_btn" onclick="Mines.tenMines(); Mines.gemasRestantes(); Mines.addMultiple();">
+                    <div class="game_config_btn_inner">
+                      <div class="game_config_btn_inner_text">10</div>
+                    </div>
+                  </div>
+                  <div class="game_config_btn" onclick="Mines.twentyMine(); Mines.gemasRestantes(); Mines.addMultiple();">
+                    <div class="game_config_btn_inner">
+                      <div class="game_config_btn_inner_text">20</div>
+                    </div>
+                  </div>
+                  <div class="game_config_btn" onclick="Mines.subMine(); Mines.gemasRestantes(); Mines.addMultiple();">
+                    <div class="game_config_btn_inner golden_btn">
+                      <div class="game_config_btn_inner_text">-</div>
+                    </div>
+                  </div>
+                  <div class="game_config_btn" onclick="Mines.somMine(); Mines.gemasRestantes(); Mines.addMultiple();">
+                    <div class="game_config_btn_inner golden_btn">
+                      <div class="game_config_btn_inner_text">+</div>
+                    </div>
+                  </div>
+                  <div class="game_input_wrapper">
+                    <label for="mines">Minas</label>
+                    <input
+                      id="mines"
+                      value="2"
+                      name="mines"
+                      type="text"
+                      class="game_input_mines"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="btn_start_game">
+                <button
+                  id="send_start_game"
+                  type="submit"
+                  class="btn btn-secondary btn-lg"
+                  style="width: 100%; background: #000000; border-radius: 10px"
+                  onclick="Mines.startTiles()">
+                  Começar o jogo
+                </button>
+              </div>
+              <div class="game_info">
+                <div class="game_info_inner">
+                  <div class="game_info_title">Informações do jogo</div>
+                  <div class="game_info_row">
+                    <div class="game_info_row_icon"></div>
+                    <div>Gemas restantes</div>
+                    <div class="game_info_row_value">
+                      <input class="input_clean" id="restgemas" value="0"></input>
+                    </div>
+                  </div>
+                  <div class="game_info_row">
+                    <div class="game_info_row_icon svg_mine"></div>
+                    <div>Chances de acertar uma mina</div>
+                    <div class="game_info_row_value">
+                      <input id="percentMine" value="0%"></input>
+                    </div>
+                  </div>
+                  <div class="game_info_row">
+                    <div class="game_info_row_icon svg_tiles"></div>
+                    <div>Telhas abertas</div>
+                    <div class="game_info_row_value">
+                      <input id="openTiles" value="0/25"></input>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
+
+<div class="modal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Fim de jogo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Continuar jogando?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="Mines.buttonNo()">Não</button>
+        <button type="button" class="btn btn-primary" onclick="Mines.buttonYes()">Sim</button>
+      </div>
+    </div>
+  </div>
+</div>
+
