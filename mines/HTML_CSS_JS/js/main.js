@@ -396,7 +396,7 @@ addDiv: function(position) {
 getValueMultiple: function(position) {
   
 
-  console.log((position * 0.5) * (Number($('#mines').val())));
+  // console.log((position * 0.5) * (Number($('#mines').val())));
 
   return 'x' + ((position * 0.5) * (Number($('#mines').val())));
 },
