@@ -1,7 +1,7 @@
 var Mines = {
 
   listRandomBombs: [],
-
+  
   init: function() {
     
   },
@@ -97,20 +97,6 @@ var Mines = {
   getValue: function() {
     return $("#game_input_number_bet_value").val();
   },
-
-  /*acao: function() {
-    //1 pagar valor input
-    //2 replace do ponto e virgula
-    //3 converter pra number (funcao nova)
-    //4 valor novo e dimunir pelo valor (0,10)
-    //5 setar o valor no input convertido
-
-    if (numeroConvertido >= 0.10) {
-      
-    }
-  },*/
-
-  /*----------------------------------------------------------------- */
 
   getQuantMines: function() {
     return $("#mines").val();
@@ -380,8 +366,8 @@ addQntMult: function() {
 },
 
 addDiv: function(position) {
-  //let newDiv = document.createElement("div");  // Cria um element DIV
-  container = $(".game_bet_inner_container"); // Grava a div que receberá os novos dados em uma variável
+
+  container = $(".game_bet_inner_container"); 
 
   let newDiv = '<div class="game_bet_item dinamic" ';
   newDiv += '     style="min-width: 78px; height: 100%;">';
@@ -394,9 +380,6 @@ addDiv: function(position) {
 },
 
 getValueMultiple: function(position) {
-  
-
-  // console.log((position * 0.5) * (Number($('#mines').val())));
 
   return 'x' + ((position * 0.5) * (Number($('#mines').val())));
 },
@@ -418,9 +401,45 @@ addMultiple: function() {
 
 },
 
+/*-------------------------------------*/
+// Adicionar saldo
 
-// Ideia, usar aa function removeDiv para limpar a lista e fazer outra função para ir 
-// adicionando as divs de acordo com a quantidade de gemas
+calc: function() {
+  var cotacao = $(".game_bet_item_text").html();
+  var cotacaoval = cotacao.replace("x", "");
+  cotacaoval = parseFloat(cotacaoval);
+
+  var betvalue = Mines.getValorAposta();
+  console.log(betvalue);
+
+  var premio = cotacaoval * betvalue;
+  // premio = premio.toFixed(2);
+  var premioFloat = parseFloat(premio);
+  console.log(premioFloat);
+
+  const premioatual = premioFloat;
+  console.log(premioatual);
+  // var premiofinal = premioatual + premioFloat;
+  // console.log(premiofinal);
+},
+
+somSaldo: function() {
+
+},
+
+removeFirst: function() {
+  var divs = $(".dinamic");
+  var qnt = divs.length;
+  console.log(qnt);
+
+  if (qnt > 1) {
+    $(".dinamic")[0].remove();
+  }
+},
+
+listPremio: function() {
+
+}
 
 /*--------------------------------------------------------------------------*/
 }
