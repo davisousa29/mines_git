@@ -2,6 +2,7 @@ var Mines = {
 
   listRandomBombs: [],
   listMultValues: [],
+  listPremio: [],
   
   init: function() {
     Mines.addMultiple();
@@ -416,41 +417,18 @@ addMultipleOpenGema: function() {
 /*-------------------------------------*/
 // Adicionar saldo
 
-calc: function() {
-  var cotacao = $(".game_bet_item_text").html();
-  var cotacaoval = cotacao.replace("x", "");
-  cotacaoval = parseFloat(cotacaoval);
-
-  var betvalue = Mines.getValorAposta();
-  console.log(betvalue);
-
-  var premio = cotacaoval * betvalue;
-  // premio = premio.toFixed(2);
-  var premioFloat = parseFloat(premio);
-  console.log(premioFloat);
-
-  const premioatual = premioFloat;
-  console.log(premioatual);
-  // var premiofinal = premioatual + premioFloat;
-  // console.log(premiofinal);
-},
-
 somSaldo: function() {
+  var betValue = $("#game_input_number_bet_value").val();
+  betValue = Number(betValue.replaceAll(',', '.'));
+  var oddValue = $(".game_bet_item_text").html();
+  oddValue = Number(oddValue.replaceAll('x',''));
+  // console.log(betValue);
+  // console.log(oddValue);
 
-},
-
-removeFirst: function() {
-  var divs = $(".dinamic");
-  var qnt = divs.length;
-  console.log(qnt);
-
-  if (qnt > 1) {
-    $(".dinamic")[0].remove();
-  }
-},
-
-listPremio: function() {
-
+  var total = betValue * oddValue;
+  Mines.listPremio.push(total);
+  // listpremio.push(total);
+  // console.log(listpremio);
 }
 
 /*--------------------------------------------------------------------------*/
