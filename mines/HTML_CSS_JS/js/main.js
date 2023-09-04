@@ -1,9 +1,10 @@
 var Mines = {
 
   listRandomBombs: [],
+  listMultValues: [],
   
   init: function() {
-    
+    Mines.addMultiple();
   },
 
   gameModeNormalBtnColor: function () {
@@ -279,6 +280,7 @@ var Mines = {
         Mines.gemasAtual();
         Mines.percentMines();
         Mines.openTiles();
+        Mines.addMultipleOpenGema();
       }
 
     } else {
@@ -361,26 +363,25 @@ addQntMult: function() {
   var qnt = $("#restgemas").val()
   console.log(qnt);
   
-
   var container = $(".game_bet_item_text");
 },
 
 addDiv: function(position) {
-
   container = $(".game_bet_inner_container"); 
 
-  let newDiv = '<div class="game_bet_item dinamic" ';
+  var valueMult =  Mines.getValueMultiple(position);
+  var newDiv = '<div class="game_bet_item dinamic" ';
   newDiv += '     style="min-width: 78px; height: 100%;">';
   newDiv += '     <div class="game_bet_item_text" ';
   newDiv += '     style="justify-content: center; display: flex; align-items: center;">';
-  newDiv += Mines.getValueMultiple(position);
+  newDiv += valueMult;
   newDiv += '   </div></div>';
   // ↑ Insere um conteúdo dentro da nova div
   container.append(newDiv); // Adiciona ao final da div o novo conteúdo
+  Mines.listMultValues.push(valueMult);
 },
 
 getValueMultiple: function(position) {
-
   return 'x' + ((position * 0.5) * (Number($('#mines').val())));
 },
 
@@ -391,14 +392,25 @@ removeDiv: function() {
 
 addMultiple: function() {
   Mines.removeDiv();
-
+  Mines.listMultValues = [];
   var qntGemas = $("#restgemas").val();
-  console.log(qntGemas);
+
 
   for (i = 1; i <= qntGemas; i++) {
     Mines.addDiv(i);
   }
+},
 
+addMultipleOpenGema: function() {
+  Mines.removeDiv();
+  Mines.listMultValues = [];
+  var qntMinas = $('#mines').val();
+  var qntGemas = $("#restgemas").val();
+  var index = 25 - (Number(qntGemas) + 1);
+
+  for (index; index <= (25 - qntMinas); index++) {
+    Mines.addDiv(index);
+  }
 },
 
 /*-------------------------------------*/
