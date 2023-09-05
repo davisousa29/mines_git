@@ -422,14 +422,36 @@ somSaldo: function() {
   betValue = Number(betValue.replaceAll(',', '.'));
   var oddValue = $(".game_bet_item_text").html();
   oddValue = Number(oddValue.replaceAll('x',''));
-  // console.log(betValue);
-  // console.log(oddValue);
 
   var total = betValue * oddValue;
   Mines.listPremio.push(total);
-  // listpremio.push(total);
-  // console.log(listpremio);
-}
+
+},
+
+addSaldo: function() {
+  const numeros = Mines.listPremio;
+  let soma = 0;
+  for (let i = 0; i < Mines.listPremio.length; i++) {
+    soma += numeros[i];
+  }
+  var saldo = $(".input_clean_saldo").val();
+  var parseSaldo = parseFloat(saldo);
+  var saldoFinal =  soma + parseSaldo;
+  $(".input_clean_saldo").val(saldoFinal);
+
+  var saldoAtual = $(".input_clean_saldo").val();
+  saldoAtual = saldoAtual.replaceAll(".", ",");
+  $(".input_clean_saldo").val(saldoAtual);
+
+},
+  
+btnEndGame: function() {
+  var btnEndGame = $("#end_game");
+  btnEndGame.removeAttribute("disabled");
+},
+  
+
+
 
 /*--------------------------------------------------------------------------*/
 }
