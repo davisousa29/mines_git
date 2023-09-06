@@ -182,7 +182,7 @@ var Mines = {
     Mines.percentMines();
     Mines.openTiles();
     Mines.subSaldo();
-    // Mines.addMultiple();
+    Mines.afterStartGameBtn();
     $(".classeNova").css("pointer-events","auto");
     $(".game_config_btn").css("pointer-events","none");
     $(".game_input_wrapper").css("pointer-events","none");
@@ -260,6 +260,7 @@ var Mines = {
   // Função para inserção das minas de acordo com a posição que a listam randomica devolver
   verifyBombs: function(value) {
     if (this.listRandomBombs.length > 0) {
+
       var isBomb = false;
       $("#telha_".concat(value)).addClass("svg_diamond");
       $("#telha_".concat(value)).css("pointer-events","none"); // proibir que clique novamente na mesma telha
@@ -270,6 +271,7 @@ var Mines = {
           $("#telha_".concat(value)).removeClass("svg_diamond");
           $("#telha_".concat(value)).addClass("svg_bomb");
           $(".classeNova").css("pointer-events","none");
+          
           setTimeout(() => {
             $('.modal').modal('show');
             $(".classeNova").css("pointer-events","none");
@@ -281,7 +283,9 @@ var Mines = {
         Mines.gemasAtual();
         Mines.percentMines();
         Mines.openTiles();
+        Mines.somSaldo();
         Mines.addMultipleOpenGema();
+        
       }
 
     } else {
@@ -292,6 +296,7 @@ var Mines = {
   buttonYes: function() {
     // limpar lista randomica para repetir o jogo:
     Mines.clearToPlayAgain()
+    Mines.originStartGame()
     // fechar modal
     $('.modal').modal('hide');
     // resetar as informações do jogo
@@ -421,6 +426,7 @@ somSaldo: function() {
   var betValue = $("#game_input_number_bet_value").val();
   betValue = Number(betValue.replaceAll(',', '.'));
   var oddValue = $(".game_bet_item_text").html();
+  console.log(oddValue);
   oddValue = Number(oddValue.replaceAll('x',''));
 
   var total = betValue * oddValue;
@@ -444,12 +450,24 @@ addSaldo: function() {
   $(".input_clean_saldo").val(saldoAtual);
 
 },
-  
-btnEndGame: function() {
-  var btnEndGame = $("#end_game");
-  btnEndGame.removeAttribute("disabled");
+
+originStartGame: function() {
+  $("#send_start_game").removeAttr("disabled");
+  $("#end_game").attr("disabled","");
 },
   
+afterStartGameBtn: function() {
+  var btnEndGame = $("#end_game");
+  btnEndGame.removeAttr("disabled");
+  $("#send_start_game").attr("disabled",""); // bloquear btn Começar jogo
+},
+
+endGameBtn: function() {
+  Mines.addSaldo();
+  Mines.buttonYes();
+},
+
+
 
 
 

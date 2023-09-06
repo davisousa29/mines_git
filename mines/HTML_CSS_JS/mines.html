@@ -266,7 +266,7 @@
                   id="send_start_game"
                   type="submit"
                   class="btn btn-secondary btn-lg"
-                  style="width: 100%; background: #000000; border-radius: 10px"
+                  style="width: 50%; background: #000000; border-radius: 10px"
                   z-index="998"
                   onclick="Mines.startTiles() ">
                   Começar o jogo
@@ -276,8 +276,8 @@
                 id="end_game" 
                 type="submit" 
                 class="btn btn-secondary btn-lg" 
-                style="width: 100%; background: red; border-radius: 10px;" 
-                onclick="">
+                style="width: 50%; background: red; border-radius: 10px;" 
+                onclick="Mines.endGameBtn(); Mines.originStartGame()">
                   Finalizar jogo
                 </button>
               </div>
